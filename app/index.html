@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Legend</h1>
+    <p class="lede">The complete trophy guide and tracker for GTA VI on PS5. Every official trophy, an original guide for each one, a roadmap to the platinum, and a checklist that saves in your browser. Works fully offline.</p>
+    <div class="progress-wrap">
+      <div class="progress-line"><span id="progressText">0 of 55 earned &middot; 0%</span><span id="gradeText"></span></div>
+      <div class="progress-bar"><div id="progressFill"></div></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button class="tab active" data-view="checklist">Checklist</button>
+  <button class="tab" data-view="roadmap">Roadmap to Platinum</button>
+  <button class="tab" data-view="missable">Missable Watchlist</button>
+  <button class="tab" data-view="about">Sources &amp; Method</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="controls">
+      <label class="search"><span>Search</span><input id="searchBox" type="search" placeholder="Search trophies, e.g. fishing, vault, bowling&hellip;" autocomplete="off"></label>
+      <div class="filters" id="filters" role="group" aria-label="Filter by kind">
+        <button data-kind="all" class="chip active">All 55</button>
+        <button data-kind="story" class="chip">Story</button>
+        <button data-kind="side" class="chip">Side missions</button>
+        <button data-kind="collectibles" class="chip">Collectibles</button>
+        <button data-kind="activities" class="chip">Activities</button>
+        <button data-kind="combat" class="chip">Combat &amp; co-op</button>
+        <button data-kind="money" class="chip">Money &amp; misc</button>
+        <button data-kind="completion" class="chip">Completion</button>
+        <button data-kind="missable" class="chip">Missable</button>
+        <button data-kind="earned" class="chip">Earned</button>
+        <button data-kind="todo" class="chip">Not yet earned</button>
+      </div>
+      <div class="toggles">
+        <label class="toggle"><input type="checkbox" id="spoilerToggle"> <span>Hide story spoilers — hide the names &amp; descriptions of story trophies until earned</span></label>
+        <label class="toggle"><input type="checkbox" id="hideEarnedToggle"> <span>Hide earned trophies</span></label>
+      </div>
+      <div class="actions">
+        <button id="exportBtn" class="btn">Export progress (.json)</button>
+        <label class="btn file-btn">Import progress<input type="file" id="importFile" accept=".json,application/json" hidden></label>
+        <button id="resetBtn" class="btn danger">Reset checklist</button>
+      </div>
+      <p class="hint" id="resultCount"></p>
+    </div>
+    <ul id="trophyList" class="trophy-list"></ul>
+    <p id="emptyState" class="empty" hidden>No trophies match this filter. Try clearing the search or choosing another kind.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p class="section-intro">Six stages, in order. Finish one stage before grinding the next, and the platinum — <strong>Vice Got a Price!</strong> — is the last trophy to pop.</p>
+    <ol id="roadmapList" class="roadmap"></ol>
+  </section>
+
+  <section id="view-missable" class="view" hidden>
+    <h2>Missable trophies — an honest answer</h2>
+    <p class="section-intro"><strong>No trophy in this list is flagged as missable.</strong> That is deliberate. A trophy is only flagged missable here when its official description clearly ties it to a one-time story moment or choice, and none of the 55 official descriptions does that. Flagging one on a guess would be inventing a missable — and a wrong flag is worse than no flag, because it would send you rushing through the story for no reason.</p>
+    <p class="section-intro">The trophies below are the ones to double-check once the game is out. They are a <strong>watchlist, not a missable list</strong>: each one is marked “not yet confirmed” and the guide says so next to the trophy itself.</p>
+    <ul id="watchList" class="trophy-list"></ul>
+    <h3>What this means in practice</h3>
+    <ul class="plain">
+      <li>Play the story in order and the chapter and named-mission trophies come on their own — they are story progress, not missables.</li>
+      <li>Missions in this series have traditionally been replayable, so a failed or finished mission is not a lost trophy. That is series history, not a confirmed fact about this game, so the watchlist stays until the game is out.</li>
+      <li>If a choice trophy turns out to lock behind one decision, this guide will say so — with a source — and only then will it be flagged.</li>
+    </ul>
+  </section>
+
+  <section id="view-about" class="view" hidden>
+    <h2>Sources &amp; method</h2>
+    <ul class="plain">
+      <li><strong>Names, descriptions and grades</strong> — the official GTA VI trophy list as published on Exophase. Every trophy in this guide uses the official name and description exactly.</li>
+      <li><strong>PSN-tracked counts</strong> — PSNProfiles, cited beside a trophy where it tracks a count (for example, the count towards 500 on Actions Speak Louder).</li>
+      <li><strong>Every guide is original</strong> — written from the official description for this guide. A step that has not yet been checked in the game is labelled as advice from the description, not as a verified fact. Nothing here is copied from another guide.</li>
+      <li><strong>Missable policy</strong> — only what the official description clearly ties to a one-time story moment or choice is flagged. Nothing in this list meets that bar, so nothing is flagged, and the watchlist above names the trophies to re-check.</li>
+      <li><strong>Privacy</strong> — your checklist is stored only in this browser (localStorage). Nothing is uploaded anywhere. Export and import use a file on your own device.</li>
+    </ul>
+    <p class="fineprint">An unofficial fan guide. Not affiliated with Rockstar Games. No official artwork, logos, box art or game screenshots are used anywhere in this guide.</p>
+  </section>
+</main>
+
+<div id="detail" class="detail" hidden>
+  <div class="detail-card" role="dialog" aria-modal="true" aria-labelledby="detailName">
+    <button id="detailClose" class="detail-close" aria-label="Close guide">&times;</button>
+    <p class="detail-grade"><span id="detailGrade"></span> &middot; <span id="detailKind"></span> &middot; <span id="detailStage"></span></p>
+    <h2 id="detailName"></h2>
+    <p id="detailDesc" class="detail-desc"></p>
+    <label class="detail-check"><input type="checkbox" id="detailEarned"> <span>Earned — tick this when the trophy pops</span></label>
+    <h3>Guide</h3>
+    <p id="detailGuide"></p>
+    <h3>Steps</h3>
+    <ol id="detailSteps"></ol>
+    <p id="detailMissable" class="missable-note"></p>
+    <h3>Sources</h3>
+    <ul id="detailSources" class="sources"></ul>
+  </div>
+</div>
+
+<footer>
+  <p>Leonida Legend — an unofficial GTA VI trophy guide &amp; tracker. 55 trophies &middot; 1 platinum, 2 gold, 6 silver, 46 bronze. Works offline; progress saves in your browser.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
